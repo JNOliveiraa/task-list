@@ -6,8 +6,6 @@ type ButtonProps = {
 
 export function Button ({onClick, className}: ButtonProps) {
   return (
-    <div>
       <button className={className} onClick={onClick}>Adicionar</button>
-    </div>
   )
 }
