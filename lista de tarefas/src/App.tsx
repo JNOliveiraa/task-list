@@ -15,6 +15,12 @@ export default function App () {
     setInput("")
   }
 
+  function handleDeleteTask(indexToDelete: number) {
+    const newTasks = tasks.filter((_, index) => index !== indexToDelete)
+    setTasks(newTasks)
+  }
+
+
   return (
 
     <div className="container">
@@ -40,7 +46,10 @@ export default function App () {
           {tasks.map((task, index) => (
             <div key={index} className="task">
               <span>{task}</span>
-              <input type="checkbox" />
+            
+            
+              <button className="delete" onClick={() => handleDeleteTask(index)}>🗑️</button>   
+              <input className="check" type="checkbox" />
             </div>
           ))}
       </div>

@@ -73,3 +73,16 @@ button.add {
 .task span {
   flex: 100%;
 }
+
+.check {
+  margin-left: 20px;
+}
+.delete {
+  background-color: rgb(124, 0, 0);
+  border-radius: 0;
+  width: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
