@@ -78,11 +78,22 @@ button.add {
   margin-left: 20px;
 }
 .delete {
-  background-color: rgb(124, 0, 0);
+  background-color: #353535;
   border-radius: 0;
   width: 10px;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  transition: 0.3s;
+}
+.delete:hover {
+  background-color: #0a0000;
+  
+}
+
+.completed {
+  text-decoration: line-through;
+  color: gray;
 }
