@@ -6,7 +6,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #f3f4f6;
+  background-color: #dededf;
   display: flex; 
   justify-content: center;
   align-items: center;
@@ -41,6 +41,7 @@ input {
   border-radius: 5px;
   border: 1px solid #ccc;
 }
+/*
 button {
  padding: 10px 20px;
  border: none;
@@ -49,11 +50,20 @@ button {
  border-radius: 5px ;
  cursor: pointer;
 }
+ */
 
-button.add {
+.add {
   background-color: #2563eb;
-  color: white; 
+  color: white;
+  
+  padding: 10px 20px;
+  border: none;
+  background-color: rgba(0, 89, 255, 0.973);
+  color: #ccc;
+  border-radius: 5px ;
+  cursor: pointer;
 }
+
 
 .task {
   display: flex;
@@ -78,22 +88,45 @@ button.add {
   margin-left: 20px;
 }
 .delete {
-  background-color: #353535;
+  background-color: #6b6b6b;
   border-radius: 0;
-  width: 10px;
+  width: 30px;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  border: none;
 
   transition: 0.3s;
 }
 .delete:hover {
-  background-color: #0a0000;
+  background-color: #000000;
   
 }
 
 .completed {
   text-decoration: line-through;
   color: gray;
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+
+}
+
+.btn {
+  margin-top: 8px;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+
+  transition: 0.1s;
+}
+.btn:hover {
+  color: #2563eb;
 }

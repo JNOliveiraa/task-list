@@ -10,11 +10,19 @@ type Task = {
 
 export default function App () {
 
-  const [input, setInput] = useState("") 
+  const [input, setInput] = useState("")
+
+  
   const [tasks, setTasks] = useState <Task[]>(() =>{
-    const savedTasks =  localStorage.getItem("tasks")
-    return savedTasks? JSON.parse(savedTasks) : []
+      const savedTasks =  localStorage.getItem("tasks")
+      return savedTasks? JSON.parse(savedTasks) : []
   })
+  
+  const [filter, setFilter] = useState("all")
+
+
+
+
 
   useEffect (() => {
      const savedTasks = localStorage.getItem("tasks")
@@ -27,6 +35,9 @@ export default function App () {
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks))
   }, [tasks])
+
+
+
 
   function handleAddTask() {
     if (input.trim() === "") return 
@@ -48,6 +59,11 @@ export default function App () {
   }
 
 
+  const filteredTasks = tasks.filter((task) => {
+    if (filter === "completed") return task.completed
+    if (filter === "pedding") return !task.completed
+    return true 
+  })
   return (
 
     <div className="container">
@@ -69,8 +85,23 @@ export default function App () {
         
       </div>
 
+      <div className="filters">
+        <button className="btn" onClick={() => setFilter("all")}>
+          Todas
+        </button>
+
+        <button className="btn" onClick={()=> setFilter("pedding")}>
+          Pendentes
+        </button>
+
+        <button className="btn" onClick={() => setFilter("completed")}>
+          concluídas
+        </button>
+
+      </div>
+
       <div className="tasks">
-          {tasks.map((task, index) => (
+          {filteredTasks.map((task, index) => (
             <div key={index} className="task">
               <span className= {task.completed? "completed" : ""}>{task.text}</span>
             
